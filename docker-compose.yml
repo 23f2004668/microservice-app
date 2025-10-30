@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  web:
+    image: 23f2004668/microservice-app:23f2004668
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
